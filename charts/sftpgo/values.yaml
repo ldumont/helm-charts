@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   annotations: {}
-  type: ClusterIP
+  type: NodePort
   port: 22
 
   # Route external traffic to node-local or cluster-wide endoints.
@@ -75,3 +75,15 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+serviceHttp:
+  annotations: {}
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  annotations: {}
+  host: localhost
+  path: /
+  type: Prefix
